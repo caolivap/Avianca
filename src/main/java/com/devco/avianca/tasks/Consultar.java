@@ -13,7 +13,7 @@ public class Consultar implements Task {
     actor.attemptsTo(Click.on(AviancaHomePage.BOTON_BUSCAR_VUELOS));
   }
 
-  public static Consultar Vuelos() {
+  public static Consultar vuelos() {
     return Tasks.instrumented(Consultar.class);
   }
 

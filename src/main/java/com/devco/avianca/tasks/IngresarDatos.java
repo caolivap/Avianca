@@ -32,7 +32,6 @@ public class IngresarDatos implements Task {
         Click.on(AviancaHomePage.CERRAR_AD_MILES),
         Cambiar.frame(),
         Click.on(AviancaHomePage.CAMPO_INGRESAR_FECHA),
-        //actor.attemptsTo(BuscarMes.deVuelo(fechaVuelo));
         Click.on(AviancaHomePage.FECHA_CALENDARIO.of(fechaVuelo)));
   }
 

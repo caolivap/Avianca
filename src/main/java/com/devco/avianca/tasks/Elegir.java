@@ -14,7 +14,7 @@ public class Elegir implements Task {
     actor.attemptsTo(Click.on(AviancaHomePage.BOTON_SOLO_IDA));
   }
 
-  public static Elegir SoloViajeDeIda() {
+  public static Elegir soloViajeDeIda() {
     return Tasks.instrumented(Elegir.class);
   }
 

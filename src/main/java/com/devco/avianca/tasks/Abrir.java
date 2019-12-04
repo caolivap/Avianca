@@ -15,7 +15,7 @@ public class Abrir implements Task{
     actor.attemptsTo(Open.browserOn(aviancaHomePage));
   }
 
-  public static Abrir LaPaginaDeAvianca() {
+  public static Abrir laPaginaDeAvianca() {
     return Tasks.instrumented(Abrir.class);
   }
 

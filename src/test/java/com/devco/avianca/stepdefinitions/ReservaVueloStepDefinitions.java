@@ -10,12 +10,13 @@ import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import java.text.ParseException;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.WebDriver;
+
+import java.text.ParseException;
 
 public class ReservaVueloStepDefinitions {
 
@@ -31,7 +32,7 @@ public class ReservaVueloStepDefinitions {
 
   @Dado("^que (.*) se encuentra en la página inicial de la aerolínea Avianca$")
   public void queCarlosSeEncuentraEnLaPáginaInicialDeLaAerolíneaAvianca(String nombreActor) {
-    carlos.wasAbleTo(Abrir.LaPaginaDeAvianca());
+    carlos.wasAbleTo(Abrir.laPaginaDeAvianca());
   }
 
   @Cuando("^busca vuelos solo de ida desde (.*) hacia (.*) para dentro de (.*) días$")
@@ -39,16 +40,14 @@ public class ReservaVueloStepDefinitions {
       int dias) throws ParseException {
     String fechaVuelo = UtilidadesFechas.obtenerFechaDeVuelo(dias);
     carlos.attemptsTo(
-        Elegir.SoloViajeDeIda(),
+        Elegir.soloViajeDeIda(),
         IngresarDatos.deVuelo(ciudadOrigen, ciudadDestino, fechaVuelo),
-        Consultar.Vuelos());
+        Consultar.vuelos());
   }
 
   @Entonces("^se obtienen los vuelos disponibles para esa fecha$")
   public void seObtienenLosVuelosDisponiblesParaEsaFecha() {
-    //carlos.should(seeThat(HayDisponibilidad.deVuelos());
     MatcherAssert.assertThat("No se encontraron viajes para la fecha", !resultadoViajesPage.getLstViajes().isEmpty());
-    //System.out.println(HayDisponibilidad.deVuelos());
   }
 
 

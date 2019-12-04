@@ -16,7 +16,6 @@ public class UtilidadesFechas extends PageObject {
     DateTime fechaVuelo = new DateTime();
     fechaVuelo = fechaVuelo.plusDays(dias);
     return devolverFechaEnFormato(fechaVuelo.toString(), FORMATO_FECHA_YYYY_MM__DD.getValor());
-    //return fechaVuelo.toString();
   }
 
   public static String devolverFechaEnFormato(String fecha, String formato) throws ParseException {
